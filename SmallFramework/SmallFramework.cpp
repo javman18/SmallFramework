@@ -10,59 +10,25 @@
 #define STB_IMAGE_IMPLEMENTATION
 
 #include "stb_image.h"
+#include "Shader.h"
 
-
-const char* vertexShaderSource = "#version 330 core\n"
-                                 "layout (location = 0) in vec3 vertexPos;\n"
-                                 "layout (location = 1) in vec3 color;\n"
-                                 "layout (location = 2) in vec2 uv;\n"
-                                 "out vec3 colorS;\n"
-                                 "out vec2 uvS;\n"
-                                 "uniform mat4 model;\n"
-                                 "uniform mat4 projection;\n"
-                                 "uniform mat4 view;\n"
-                                 "void main()\n"
-                                 "{\n"
-                                 "    gl_Position = projection *view*  model*vec4(vertexPos, 1);\n"
-                                 "    colorS = color;\n"
-                                 "    uvS = uv;\n" 
-                                 "}\n\0";
-
-
-const char* fragmentShaderSource = "#version 330 core\n"
-                                    "out vec4 FragColor;\n"
-                                    "in vec3 colorS;\n"
-                                    "in vec2 uvS;\n"
-                                    "uniform vec3 color;\n"
-                                    "uniform sampler2D texImage;\n"
-                                    "void main()\n"
-                                    "{\n"
-                                    "   FragColor = texture(texImage,uvS);\n"
-                                    "}\n\0";
-
-const int width = 640;
-const int height = 480;
 int main()
 {
+    Shader s;
+    s.ReadFile("assets/shaders/SimpleVertex.vert");
     GameStateManager *gsm = GameStateManager::GetPtr();
     Game game;
     gsm->SetState(&game);
     gsm->GameLoop();
+
 
     /*int widthImage;
     int heightImage;
     int channels;
     unsigned char* image = stbi_load("tex.png", &widthImage, &heightImage, &channels, 0);
 
-    glfwInit();
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-    GLFWwindow *window = glfwCreateWindow(width, height, "example opengl", NULL, NULL);
-
-    glfwMakeContextCurrent(window);
-
-    glewInit();
-
+    
+    
     unsigned int texture;
     glGenTextures(1, &texture);
     glBindTexture(GL_TEXTURE_2D, texture);
@@ -169,14 +135,3 @@ int main()
     }
     */
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
