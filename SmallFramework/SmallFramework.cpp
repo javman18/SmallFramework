@@ -2,12 +2,11 @@
 //
 #include <GL/glew.h>
 #include <iostream>
-#include "glfw3.h"
-
+#include "Game.h"
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
-
+#include "GameStateManager.h"
 #define STB_IMAGE_IMPLEMENTATION
 
 #include "stb_image.h"
@@ -45,7 +44,12 @@ const int width = 640;
 const int height = 480;
 int main()
 {
-    int widthImage;
+    GameStateManager *gsm = GameStateManager::GetPtr();
+    Game game;
+    gsm->SetState(&game);
+    gsm->GameLoop();
+
+    /*int widthImage;
     int heightImage;
     int channels;
     unsigned char* image = stbi_load("tex.png", &widthImage, &heightImage, &channels, 0);
@@ -163,7 +167,7 @@ int main()
         glfwPollEvents();
         alpha -= 0.001;
     }
-
+    */
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

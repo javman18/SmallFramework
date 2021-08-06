@@ -16,6 +16,7 @@ Platform::Platform()
 	{
 		keys[i] = 0;
 	}
+
 }
 
 void Platform::init()
@@ -31,7 +32,8 @@ void Platform::init()
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 	glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
-
+	width = 640;
+	height = 480;
 	bool fullScreen = false;
 	if (fullScreen)
 	{
@@ -39,7 +41,7 @@ void Platform::init()
 	}
 	else
 	{
-		mainWindow = glfwCreateWindow(width, height, name.c_str(), NULL, NULL);
+		mainWindow = glfwCreateWindow(width, height, "SmallFramework", NULL, NULL);
 	}
 
 	if (!mainWindow)
@@ -122,7 +124,7 @@ Platform* Platform::GetPtr()
 {
 	if (ptr == nullptr)
 	{
-		ptr = new Platform("THE GAME");
+		ptr = new Platform();
 	}
 	return ptr;
 }
