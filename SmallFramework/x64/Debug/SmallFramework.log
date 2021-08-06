@@ -1,0 +1,6 @@
+﻿  Platform.cpp
+F:\Dev2021\SmallFramework\SmallFramework\Platform.cpp(17,9): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+F:\Dev2021\SmallFramework\SmallFramework\Platform.cpp(100,14): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
+F:\Dev2021\SmallFramework\SmallFramework\Platform.cpp(151,39): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+F:\Dev2021\SmallFramework\SmallFramework\Platform.cpp(151,36): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  SmallFramework.vcxproj -> F:\Dev2021\SmallFramework\x64\Debug\SmallFramework.exe
