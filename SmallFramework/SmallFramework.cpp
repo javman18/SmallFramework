@@ -14,8 +14,6 @@
 
 int main()
 {
-    Shader s;
-    s.ReadFile("assets/shaders/SimpleVertex.vert");
     GameStateManager *gsm = GameStateManager::GetPtr();
     Game game;
     gsm->SetState(&game);
@@ -79,23 +77,6 @@ int main()
     glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
     glEnableVertexAttribArray(2);
 
-
-    unsigned int vertexShader = glCreateShader(GL_VERTEX_SHADER);
-    glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
-    glCompileShader(vertexShader);
-
-    unsigned int fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
-    glShaderSource(fragmentShader, 1, &fragmentShaderSource, NULL);
-    glCompileShader(fragmentShader);
-
-    unsigned int shaderProgram = glCreateProgram();
-    glAttachShader(shaderProgram, vertexShader);
-    glAttachShader(shaderProgram, fragmentShader);
-    glLinkProgram(shaderProgram);
-
-    glDeleteShader(vertexShader);
-    glDeleteShader(fragmentShader);
-
     glm::mat4 model = glm::mat4(1.0f);
     model = glm::scale(model, glm::vec3(4,4,4));
     glm::mat4 view(1); 
@@ -112,7 +93,6 @@ int main()
         
         glBindTexture(GL_TEXTURE_2D, texture);
 
-        glUseProgram(shaderProgram);
         glBindVertexArray(VAO);
         color.x = (rand() % 100) / 100.0f;
         color.y = (rand() % 100) / 100.0f;
