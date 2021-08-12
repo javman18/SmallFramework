@@ -20,28 +20,7 @@ int main()
     gsm->GameLoop();
 
 
-    /*int widthImage;
-    int heightImage;
-    int channels;
-    unsigned char* image = stbi_load("tex.png", &widthImage, &heightImage, &channels, 0);
-
-    
-    
-    unsigned int texture;
-    glGenTextures(1, &texture);
-    glBindTexture(GL_TEXTURE_2D, texture);
-    
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-
-    if (image != nullptr)
-    {
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, widthImage, heightImage, 0, GL_RGB, GL_UNSIGNED_BYTE, image);
-        glGenerateMipmap(GL_TEXTURE_2D);
-    }
-    
+    /*
 
     float vertex[] = {
          0.5f, 0.5f,0.0f,0.0,0.0,1.0,1.0f, 1.0f,
@@ -91,7 +70,7 @@ int main()
         glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
         
-        glBindTexture(GL_TEXTURE_2D, texture);
+       
 
         glBindVertexArray(VAO);
         color.x = (rand() % 100) / 100.0f;
