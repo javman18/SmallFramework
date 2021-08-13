@@ -1,7 +1,20 @@
 #pragma once
 #include "GameState.h"
+#include "Plane.h"
+#include "Shader.h"
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+
 class Game : public GameState
 {
+private:
+	glm::mat4 model;
+	glm::mat4 view;
+	glm::mat4 projection;
+	Plane plane;
+	Shader shader;
+public:
 	virtual void Init() override;
 	virtual void Draw() override;
 	virtual bool Input(std::map<int, bool> keys) override;

@@ -3,6 +3,14 @@
   <ItemGroup>
     <ClCompile Include="SmallFramework.cpp" />
     <ClCompile Include="Shader.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameState.cpp" />
+    <ClCompile Include="GameStateManager.cpp" />
+    <ClCompile Include="Platform.cpp" />
+    <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="Object.cpp" />
+    <ClCompile Include="Model.cpp" />
+    <ClCompile Include="Plane.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Shaders">
@@ -19,5 +27,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Shader.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="GameState.h" />
+    <ClInclude Include="GameStateManager.h" />
+    <ClInclude Include="Platform.h" />
+    <ClInclude Include="Texture.h" />
+    <ClInclude Include="Object.h" />
+    <ClInclude Include="Model.h" />
+    <ClInclude Include="Plane.h" />
   </ItemGroup>
 </Project>
