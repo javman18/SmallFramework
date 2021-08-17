@@ -60,8 +60,7 @@ void GameStateManager::GameLoop()
 			platform->RenderClear();
 			state->Draw();
 			platform->RenderPresent();
-			frameRate++;
-			
+			frameRate++;		
 
 			oldtime = newtime;
 		}

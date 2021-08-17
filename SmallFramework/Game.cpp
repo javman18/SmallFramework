@@ -15,6 +15,7 @@ void Game::Init()
 
 void Game::Draw() 
 {
+    shader.Use();
     plane.Draw();
 }
 

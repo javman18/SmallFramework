@@ -23,11 +23,13 @@ Shader::Shader():shaderProgram(0)
 void Shader::Compile(const std::string& vertex, const std::string& fragment)
 {
     unsigned int vertexShader = glCreateShader(GL_VERTEX_SHADER);
-    glShaderSource(vertexShader, 1, (const GLchar* const*)vertex.c_str(), NULL);
+    const char* cvertex = vertex.c_str();
+    glShaderSource(vertexShader, 1, &cvertex, NULL);
     glCompileShader(vertexShader);
 
     unsigned int fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
-    glShaderSource(fragmentShader, 1, (const GLchar* const*)fragment.c_str(), NULL);
+    const char* cfragment = fragment.c_str();
+    glShaderSource(fragmentShader, 1, &cfragment, NULL);
     glCompileShader(fragmentShader);
 
     shaderProgram = glCreateProgram();
