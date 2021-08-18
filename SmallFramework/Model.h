@@ -7,7 +7,7 @@ class Model : public Object
 {
 protected:
     std::vector<float> vertex;
-    std::vector<float> index;
+    std::vector<unsigned int> index;
     void CreateBuffers();
 private:
     unsigned int VAO;
