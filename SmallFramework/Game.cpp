@@ -16,7 +16,13 @@ void Game::Init()
 void Game::Draw() 
 {
     shader.Use();
+    shader.SetUniform("model", model);
+    shader.SetUniform("view", view);
+    shader.SetUniform("projection", projection);
+    model = glm::rotate(model, glm::radians(alpha), glm::vec3(0.0f, 1.0f, 0.0f));
+
     plane.Draw();
+    alpha += 0.1;
 }
 
 bool Game::Input(std::map<int, bool> keys) 
@@ -31,7 +37,6 @@ bool Game::MouseInput(int x, int y, bool leftbutton)
 
 void Game::Update(unsigned int delta)
 {
-
 }
 
 void Game::Close()

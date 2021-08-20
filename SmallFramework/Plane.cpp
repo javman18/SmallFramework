@@ -18,4 +18,11 @@ Plane::Plane()
 void Plane::Load() 
 {
     CreateBuffers();
+    texture.Load("assets/textures/tex.png");
+}
+
+void Plane::Draw()
+{
+    texture.Use();
+    Model::Draw();
 }

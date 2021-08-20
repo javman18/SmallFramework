@@ -15,6 +15,6 @@ private:
     unsigned int EBO;    
 public:
     virtual void Load() = 0;
-    void Draw();
+    virtual void Draw();
     Model();
 };

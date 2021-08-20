@@ -14,6 +14,7 @@ private:
 	glm::mat4 projection;
 	Plane plane;
 	Shader shader;
+	float alpha = 0;
 public:
 	virtual void Init() override;
 	virtual void Draw() override;

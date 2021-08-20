@@ -1,5 +1,4 @@
 #include "Shader.h"
-
 #include <fstream>
 
 std::string Shader::ReadFile(const std::string &path)
@@ -54,6 +53,34 @@ unsigned int Shader::GetShaderProgram()
     return shaderProgram;
 }
 
-void Shader::Use(){
+void Shader::Use()
+{
     glUseProgram(shaderProgram);
+}
+
+int Shader::GetUniformId(std::string variable)
+{
+    auto uniform = uniforms.find(variable);
+    if (uniform != uniforms.end())
+    {
+        return uniform->second;
+    }
+    int id = glGetUniformLocation(shaderProgram, variable.c_str());
+    if (id >= 0)
+    {
+        uniforms[variable] = id;
+    }
+    return id;
+}
+
+void Shader::SetUniform(std::string variable, glm::mat4 matrix)
+{
+    int id = GetUniformId(variable);
+    glUniformMatrix4fv(id, 1, GL_FALSE, glm::value_ptr(matrix));
+}
+
+void Shader::SetUniform(std::string variable, glm::vec3 vector)
+{
+    int id = GetUniformId(variable);
+    glUniform3f(id, vector.x, vector.y, vector.z);
 }
