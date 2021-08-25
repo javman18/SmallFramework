@@ -6,16 +6,21 @@ project(SmallFramework)
 
 include_directories("include")
 include_directories("../ExternalLibs/glew-2.1.0/include")
-include_directories("../ExternalLibs/glfw-3.3.4.bin.WIN64/include")
+include_directories("../ExternalLibs/glfw-3.3.4.bin.WIN64/include/GLFW")
 include_directories("../ExternalLibs/glm/glm")
 include_directories("../ExternalLibs/std_image/include")
 
 add_executable(SmallFramework "src/Game.cpp"
                               "src/GameState.cpp"
                               "src/GameStateManager.cpp"
+                              "src/SmallFramework.cpp"
                               "src/Model.cpp"
                               "src/Object.cpp"
                               "src/Plane.cpp"
-                              "SmallFramework/src/Platform.cpp"
+                              "src/Platform.cpp"
                               "src/Shader.cpp"
                               "src/Texture.cpp")
+
+target_link_libraries(SmallFramework "../ExternalLibs/glew-2.1.0/lib/Release/x64/glew32"
+                                     "../ExternalLibs/glfw-3.3.4.bin.WIN64/lib-vc2019/glfw3"
+                                     "Opengl32")
