@@ -21,6 +21,6 @@ add_executable(SmallFramework "src/Game.cpp"
                               "src/Shader.cpp"
                               "src/Texture.cpp")
 
-target_link_libraries(SmallFramework "../ExternalLibs/glew-2.1.0/lib/Release/x64/glew32"
-                                     "../ExternalLibs/glfw-3.3.4.bin.WIN64/lib-vc2019/glfw3"
+target_link_libraries(SmallFramework "../../ExternalLibs/glew-2.1.0/lib/Release/x64/glew32"
+                                     "../../ExternalLibs/glfw-3.3.4.bin.WIN64/lib-vc2019/glfw3"
                                      "Opengl32")

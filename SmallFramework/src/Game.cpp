@@ -10,7 +10,7 @@ void Game::Init()
     auto platform = Platform::GetPtr();
     projection = glm::perspective(glm::radians(45.0f), platform->GetWidth() / (float)platform->GetHeight(), 0.1f, 100.0f);
     plane.Load();
-    shader.CreateShader("./assets/Shaders/SimpleVertex.vert", "./assets/Shaders/SimpleFrag.frag");
+    shader.CreateShader("./assets/Shaders/SimpleVertex.vert", "./assets/Shaders/SimpleVertex.frag");
 }
 
 void Game::Draw() 
