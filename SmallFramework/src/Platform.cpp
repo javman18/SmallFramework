@@ -56,7 +56,7 @@ void Platform::init()
 
 	// Set the current context
 	glfwMakeContextCurrent(mainWindow);
-	glfwSetInputMode(mainWindow, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+	glfwSetInputMode(mainWindow, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
 	// Allow modern extension access
 	glewExperimental = GL_TRUE;
 
@@ -69,7 +69,7 @@ void Platform::init()
 		return;
 	}
 
-	//glEnable(GL_DEPTH_TEST);
+	glEnable(GL_DEPTH_TEST);
 
 	// Create Viewport
 	//glViewport(0, 0, bufferWidth, bufferHeight);
@@ -83,7 +83,7 @@ Platform::~Platform()
 void Platform::RenderClear()
 {
 	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
-	glClear(GL_COLOR_BUFFER_BIT);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
 void Platform::RenderPresent()

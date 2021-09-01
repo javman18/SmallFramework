@@ -11,6 +11,7 @@ class Game : public GameState
 private:
 	glm::mat4 model;
 	glm::mat4 view;
+	glm::vec3 lightPosition;
 	glm::mat4 projection;
 	Plane plane;
 	Shader shader;
