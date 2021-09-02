@@ -72,7 +72,7 @@ void Platform::init()
 	glEnable(GL_DEPTH_TEST);
 
 	// Create Viewport
-	//glViewport(0, 0, bufferWidth, bufferHeight);
+	glViewport(0, 0, bufferWidth, bufferHeight);
 }
 Platform::~Platform()
 {

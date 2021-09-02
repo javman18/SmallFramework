@@ -34,5 +34,5 @@ void Model::CreateBuffers()
 void Model::Draw()
 {
 	glBindVertexArray(VAO);
-	glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+	glDrawElements(GL_TRIANGLES, vertex.size(), GL_UNSIGNED_INT, 0);
 }

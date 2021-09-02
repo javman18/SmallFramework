@@ -32,7 +32,7 @@ void Game::Draw()
     lightPosition.x = alpha;
     lightPosition.z = alpha;
     plane.Draw();
-    alpha += 0.0001;
+    alpha += 0.01;
 }
 
 bool Game::Input(std::map<int, bool> keys) 
