@@ -1,6 +1,7 @@
 #pragma once
 #include "GameState.h"
 #include "Plane.h"
+#include "Box.h"
 #include "Shader.h"
 #include <glm.hpp>
 #include <gtc/matrix_transform.hpp>
@@ -13,7 +14,8 @@ private:
 	glm::mat4 view;
 	glm::vec3 lightPosition;
 	glm::mat4 projection;
-	Plane plane;
+	Box plane;
+	Box box;
 	Shader shader;
 	float alpha = 0;
 public:

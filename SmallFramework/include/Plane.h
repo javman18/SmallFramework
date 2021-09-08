@@ -2,6 +2,7 @@
 
 #include "Model.h"
 #include "Texture.h"
+#include "Shader.h"
 
 class Plane : public Model
 {
@@ -10,6 +11,6 @@ private:
 public:
 	Plane();
 	void Load() override;
-	void Draw() override;
+	void Draw(Shader *) override;
 };
 

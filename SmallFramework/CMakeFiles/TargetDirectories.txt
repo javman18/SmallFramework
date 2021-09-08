@@ -1,0 +1,3 @@
+F:/Dev2021/SmallFramework/SmallFramework/CMakeFiles/SmallFramework.dir
+F:/Dev2021/SmallFramework/SmallFramework/CMakeFiles/ALL_BUILD.dir
+F:/Dev2021/SmallFramework/SmallFramework/CMakeFiles/ZERO_CHECK.dir

@@ -1,4 +1,5 @@
 #include "Model.h"
+#include "Shader.h"
 #include <GL/glew.h>
 
 Model::Model():VAO(-1), VBO(-1), EBO(-1)
@@ -31,8 +32,9 @@ void Model::CreateBuffers()
 	glEnableVertexAttribArray(3);
 }
 
-void Model::Draw()
+void Model::Draw(Shader *shader)
 {
+	shader->SetUniform("model", transform.GetTransform());
 	glBindVertexArray(VAO);
 	glDrawElements(GL_TRIANGLES, vertex.size(), GL_UNSIGNED_INT, 0);
 }

@@ -14,6 +14,7 @@ void Game::Init()
     auto platform = Platform::GetPtr();
     projection = glm::perspective(glm::radians(45.0f), platform->GetWidth() / (float)platform->GetHeight(), 0.1f, 400.0f);
     plane.Load();
+    box.Load();
     shader.CreateShader("./assets/Shaders/ADSL.vert", "./assets/Shaders/ADSL.frag");
     lightPosition.x = 0;
     lightPosition.y = 0;
@@ -31,7 +32,9 @@ void Game::Draw()
     model = glm::rotate(model, glm::radians(alpha), glm::vec3(0.0f, 1.0f, 0.0f));
     lightPosition.x = alpha;
     lightPosition.z = alpha;
-    plane.Draw();
+   // plane.Draw();
+    
+    box.Draw(&shader);
     alpha += 0.01;
 }
 

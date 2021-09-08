@@ -41,8 +41,8 @@ void Plane::Load()
     texture.Load("assets/textures/tex.png");
 }
 
-void Plane::Draw()
+void Plane::Draw(Shader * shader)
 {
     texture.Use();
-    Model::Draw();
+    Model::Draw(shader);
 }
