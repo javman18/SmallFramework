@@ -6,6 +6,8 @@
 #include <glm.hpp>
 #include <gtc/matrix_transform.hpp>
 #include <gtc/type_ptr.hpp>
+#include <memory>
+#include <list>
 
 class Game : public GameState
 {
@@ -14,10 +16,13 @@ private:
 	glm::mat4 view;
 	glm::vec3 lightPosition;
 	glm::mat4 projection;
-	Box plane;
-	Box box;
+	
+	std::list<std::shared_ptr<Box>> boxes;
+
 	Shader shader;
+	Shader shaderOneColor;
 	float alpha = 0;
+	bool switchShader = false;
 public:
 	virtual void Init() override;
 	virtual void Draw() override;

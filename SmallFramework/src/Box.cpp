@@ -1,7 +1,10 @@
 #include "Box.h"
 
-Box::Box()
+Box::Box(Transform & trans)
 {
+	transform.SetPosition(trans.GetPosition());
+	transform.SetScale(trans.GetScale());
+	transform.SetRotation(trans.GetRotation());
     vertex = {
          -1.0, -1.0,  1.0,0.0,0.0,1.0,1.0f, 1.0f,0.0,0.0,1.0,
          1.0, -1.0,  1.0,0.0,1.0,0.0,1.0f, 0.0f,0.0,0.0,1.0,
@@ -33,9 +36,6 @@ Box::Box()
 		3, 2, 6,
 		6, 7, 3
     };
-	transform.SetPosition(glm::vec3(1, 1, 1));
-	transform.SetRotation(glm::vec3(0,0, 0));
-	transform.SetScale(glm::vec3(2, 2, 2));
 }
 
 void Box::Load()
@@ -46,9 +46,9 @@ void Box::Load()
 
 void Box::Draw(Shader * shader)
 {
-	alpha += 0.01;
-	transform.SetPosition(glm::vec3(alpha, 1, 1));
-	transform.SetRotation(glm::vec3(alpha, 1, alpha));
+	//alpha += 0.01;
+	//transform.SetPosition(glm::vec3(alpha, 1, 1));
+	//transform.SetRotation(glm::vec3(alpha, 1, alpha));
     texture.Use();
     Model::Draw(shader);
 }

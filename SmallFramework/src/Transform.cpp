@@ -4,6 +4,14 @@ Transform::Transform()
 {
 
 }
+
+Transform::Transform(glm::vec3 _pos, glm::vec3 _scale, glm::vec3 _rot)
+{
+	position = _pos;
+	scale = _scale;
+	rotation = _rot;
+}
+
 glm::vec3 Transform::GetPosition()
 {
 	return position;

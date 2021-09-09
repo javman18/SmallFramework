@@ -9,7 +9,7 @@ private:
 	float alpha= 0;
 	Texture texture;
 public:
-	Box();
+	Box(Transform& trans);
 	void Load() override;
 	void Draw(Shader* shader) override;
 };

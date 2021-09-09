@@ -32,8 +32,8 @@ void Platform::init()
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 	glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
-	width = 640;
-	height = 480;
+	width = 1024;
+	height = 760;
 	bool fullScreen = false;
 	if (fullScreen)
 	{
