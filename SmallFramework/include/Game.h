@@ -3,6 +3,8 @@
 #include "Plane.h"
 #include "Box.h"
 #include "Shader.h"
+#include "Camera.h"
+#include "Platform.h"
 #include <glm.hpp>
 #include <gtc/matrix_transform.hpp>
 #include <gtc/type_ptr.hpp>
@@ -18,7 +20,7 @@ private:
 	glm::mat4 projection;
 	
 	std::list<std::shared_ptr<Box>> boxes;
-
+	Camera cam;
 	Shader shader;
 	Shader shaderOneColor;
 	float alpha = 0;

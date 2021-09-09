@@ -20,6 +20,7 @@ add_executable(SmallFramework
                               "include/Platform.h"
                               "include/Shader.h"
 			      "include/Transform.h"
+		              "include/Camera.h"
 			      "include/Box.h"
                               "include/Texture.h"
 
@@ -33,6 +34,7 @@ add_executable(SmallFramework
                               "src/Platform.cpp"
                               "src/Shader.cpp"
 			      "src/Transform.cpp"
+			      "src/Camera.cpp"
 			      "src/Box.cpp"
                               "src/Texture.cpp")
 
